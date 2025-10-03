@@ -1,150 +1,159 @@
-# ALX Listing App
 
-A modern, responsive Airbnb clone built with Next.js, TypeScript, and Tailwind CSS. This project focuses on creating a comprehensive property listing platform with a clean, user-friendly interface and robust functionality.
 
-## 🎯 Project Goals
+---
 
-The ALX Listing App aims to replicate the core functionality of Airbnb's property listing system, including:
+# ALX Listing App Detail
 
-- **Property Listings**: Display properties with detailed information, images, and pricing
-- **Search & Filtering**: Advanced search capabilities with multiple filter options
-- **User Management**: User authentication, profiles, and booking management
-- **Responsive Design**: Mobile-first approach ensuring optimal experience across all devices
-- **Type Safety**: Full TypeScript integration for reliable, maintainable code
-- **Modern UI/UX**: Clean, intuitive interface using Tailwind CSS
+A **responsive Property Detail Page** built with **Next.js** and **Tailwind CSS**, showcasing property information, amenities, reviews, and a booking section. This project demonstrates modular React components, dynamic routing, and responsive design for web applications.
 
-##  Project Structure
+---
+
+## **Table of Contents**
+
+* [Project Overview](#project-overview)
+* [Features](#features)
+* [Folder Structure](#folder-structure)
+* [Technologies Used](#technologies-used)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Components](#components)
+* [Screenshots](#screenshots)
+* [License](#license)
+
+---
+
+## **Project Overview**
+
+The ALX Listing App Detail project implements a **property detail page** similar to Airbnb. Users can:
+
+* View property information (name, rating, location)
+* Browse property images in a responsive grid
+* Read descriptions and host details
+* See amenities offered
+* Check reviews with user avatars and ratings
+* Make bookings with dynamic total calculation
+
+This page is **fully responsive**, optimized for mobile and desktop screens.
+
+---
+
+## **Features**
+
+* **Dynamic Routing**: Pages generated dynamically using Next.js `[id].tsx`
+* **Responsive Layout**: Tailwind CSS for mobile-first design
+* **Reusable Components**: `PropertyDetail`, `BookingSection`, `ReviewSection`
+* **Dynamic Booking**: Calculates total cost based on selected check-in and check-out dates
+* **Reviews Section**: User avatars, ratings, and comments
+* **Amenities List**: Displays property features and services
+
+---
+
+## **Folder Structure**
 
 ```
-alx-listing-app/
-├── components/          # Reusable React components
-│   ├── common/         # Generic UI components (Card, Button, Modal, etc.)
-│   ├── layout/         # Layout-specific components (Header, Footer, Navbar)
-│   └── property/       # Property-related components (PropertyCard, PropertyList)
+alx-listing-app-01/
 │
-├── constants/          # Application constants and configuration
-│   └── index.ts       # API endpoints, UI text, validation rules, etc.
+├─ pages/
+│   └─ property/
+│       └─ [id].tsx           # Dynamic property page
 │
-├── interfaces/         # TypeScript type definitions
-│   └── index.ts       # All interfaces for props, data models, and API responses
+├─ components/
+│   └─ property/
+│       ├─ PropertyDetail.tsx # Main property details
+│       ├─ BookingSection.tsx # Booking component with date picker
+│       └─ ReviewSection.tsx  # Reviews listing component
 │
-├── pages/             # Next.js pages (file-based routing)
-│   ├── _app.tsx      # Custom App component
-│   ├── index.tsx     # Home page
-│   └── ...           # Other pages
+├─ constants/
+│   └─ index.ts               # Sample property data
 │
-├── public/            # Static assets
-│   └── assets/       # Images, icons, and other media files
-│
-├── styles/            # Global styles and CSS files
-│   └── globals.css   # Tailwind CSS imports and global styles
-│
-└── ...config files   # Next.js, TypeScript, Tailwind, and other configurations
+└─ interfaces/
+    └─ index.ts               # TypeScript interfaces for type safety
 ```
 
-### 📁 Directory Purposes
+---
 
-- **`components/`**: Contains all reusable React components organized by category
-  - `common/`: Generic UI components like Card, Button, Modal that can be used anywhere
-  - `layout/`: Components specific to page layout (headers, footers, navigation)
-  - `property/`: Components specifically related to property listings and details
+## **Technologies Used**
 
-- **`interfaces/`**: Centralized TypeScript type definitions
-  - Ensures type safety across the entire application
-  - Includes component props, data models, API responses, and utility types
+* **[Next.js](https://nextjs.org/)** – React framework for server-side rendering and dynamic routing
+* **[React](https://reactjs.org/)** – Component-based UI library
+* **[Tailwind CSS](https://tailwindcss.com/)** – Utility-first CSS framework for responsive design
+* **TypeScript** – Type safety and better development experience
 
-- **`constants/`**: Application-wide constants and configuration
-  - API endpoints and base URLs
-  - UI text and labels for internationalization
-  - Validation rules and configuration settings
-  - Static data like property types and amenities
+---
 
-- **`public/assets/`**: Static files served directly by Next.js
-  - Property images, user avatars, icons
-  - Any media files that don't require processing
+## **Installation**
 
-## 🚀 Getting Started
+1. **Clone the repository**
 
-### Prerequisites
+```bash
+git clone https://github.com/yourusername/alx-listing-app-detail.git
+cd alx-listing-app-detail
+```
 
-Before running this project, make sure you have the following installed:
+2. **Install dependencies**
 
-- **Node.js** (version 18.0 or higher)
-- **npm** (comes with Node.js) or **yarn**
+```bash
+npm install
+# or
+yarn install
+```
 
-### Installation & Setup
+3. **Run the development server**
 
-1. **Clone the repository** (or navigate to your project directory):
-   ```bash
-   cd alx-listing-app
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+4. **Open in browser**
 
-3. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
+Navigate to [http://localhost:3000/property/Ocean%20View%20Apartment](http://localhost:3000/property/Ocean%20View%20Apartment) (replace with a property name in your sample data).
 
-4. **Open your browser** and navigate to:
-   ```
-   http://localhost:3000
-   ```
+---
 
-The application will automatically reload when you make changes to the code.
+## **Usage**
 
-### Available Scripts
+* Browse properties using the **dynamic URL** `/property/[id]`
+* View property details, amenities, and reviews
+* Select **check-in/check-out dates** in the booking section
+* Total payment updates dynamically based on selected dates
+* Click **Reserve now** to simulate a booking
 
-- **`npm run dev`**: Runs the development server with hot reloading
-- **`npm run build`**: Creates an optimized production build
-- **`npm run start`**: Starts the production server (run `npm run build` first)
-- **`npm run lint`**: Runs ESLint to check for code quality issues
-- **`npm run lint:fix`**: Automatically fixes ESLint issues where possible
+---
 
-## 🛠️ Technologies Used
+## **Components**
 
-- **[Next.js](https://nextjs.org/)**: React framework with file-based routing and SSR capabilities
-- **[TypeScript](https://www.typescriptlang.org/)**: Type-safe JavaScript for better development experience
-- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework for rapid UI development
-- **[React](https://reactjs.org/)**: JavaScript library for building user interfaces
-- **[ESLint](https://eslint.org/)**: Code linting tool for maintaining code quality
+### **1. PropertyDetail**
 
-## 📱 Features (Planned)
+* Displays property name, rating, location, description, images, and amenities
+* Integrates `BookingSection` and `ReviewSection` for a full detail page
 
-- [ ] **Property Listings**: Browse and search available properties
-- [ ] **Property Details**: Detailed view with images, amenities, and booking options
-- [ ] **User Authentication**: Login, registration, and profile management
-- [ ] **Booking System**: Reserve properties with date selection
-- [ ] **Search & Filters**: Advanced filtering by location, price, amenities, etc.
-- [ ] **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- [ ] **Reviews & Ratings**: User reviews and property ratings
-- [ ] **Host Dashboard**: Property management for hosts
+### **2. BookingSection**
 
-## 🎨 Design System
+* Date pickers for check-in and check-out
+* Calculates total payment (`price × number of nights`)
+* “Reserve now” button
 
-The application follows a consistent design system built with Tailwind CSS:
+### **3. ReviewSection**
 
-- **Colors**: Modern, accessible color palette
-- **Typography**: Clear hierarchy with readable fonts
-- **Spacing**: Consistent spacing using Tailwind's scale
-- **Components**: Reusable UI components with consistent styling
-- **Responsive**: Mobile-first responsive design
+* Maps over reviews array to display user avatars, names, ratings, and comments
 
-## 🔧 Development Guidelines
+---
 
-- **Component Structure**: Use functional components with TypeScript
-- **Styling**: Utilize Tailwind CSS utility classes
-- **State Management**: React hooks for local state, context for global state
-- **File Naming**: Use PascalCase for components, camelCase for utilities
-- **Code Quality**: Follow ESLint rules and TypeScript best practices
+## **Screenshots**
 
-## 📚 Resources
+**Property Detail Page (Desktop)**
+![Desktop view](screenshots/desktop.png)
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [React Documentation](https://reactjs.org/docs)
+**Property Detail Page (Mobile)**
+![Mobile view](screenshots/mobile.png)
+
+---
+
+## **License**
+
+This project is **MIT licensed** – see the [LICENSE](LICENSE) file for details.
+
+---
 
